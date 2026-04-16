@@ -1,0 +1,39 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.seed
+*.pid
+
+# Dependency directories
+jspm_packages/
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm/
+
+# Build output
+dist/
+built/
+
+# Local environment variables
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+.DS_Store
+
+# Misc
+*.log
+*.tgz
+*.gz
