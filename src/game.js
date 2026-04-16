@@ -1,10 +1,10 @@
-// 1. 設定：発行されたGASのURL（末尾が /exec のもの）
+// 1. 設定：発行された最新のGASウェブアプリURL
 const gasUrl = "https://script.google.com/macros/s/AKfycbwDNmdeT7ojJIXlDn0SudBRTe-uVLdue4dKSb_-4PpqcvBXhk6ZBc0HxDk_uwYPljIzqw/exec";
 
 // 2. 変数管理
 let n = 2;
 let sequence = [];
-let trialLogs = [];
+let trialLogs = []; // 反応ログを格納
 let studentID = "";
 let totalTrials = 0;
 let totalMatches = 0;
@@ -76,6 +76,7 @@ function startLogic() {
 
 function nextTrial() {
     let nextPos;
+    // 33%の確率で一致させるロジック
     if (sequence.length >= n) {
         const targetPos = sequence[sequence.length - n];
         if (Math.random() < 0.333) {
@@ -171,6 +172,10 @@ async function endGame() {
     document.getElementById('game').style.display = 'none';
     document.getElementById('result').style.display = 'block';
 
+    // Retryボタンを取得して非表示にする（送信中の誤操作防止）
+    const retryBtn = document.querySelector("#result button[onclick='location.reload()']");
+    if (retryBtn) retryBtn.style.display = 'none';
+
     let actualMatches = 0;
     for(let i = n; i < sequence.length; i++) {
         if(sequence[i] === sequence[i-n]) actualMatches++;
@@ -182,22 +187,26 @@ async function endGame() {
         Level: ${n}-Back<br>
         Score: ${correctClicks} / ${actualMatches}<br>
         <strong style="font-size: 24px; color: #38bdf8;">正答率: ${acc}%</strong><br>
-        <p id="send-status" style="font-size: 12px; margin-top:10px;">データを送信中...</p>
+        <p id="send-status" style="font-size: 14px; margin-top:10px; color: #fbbf24;">⚠️ データを送信中です。そのままお待ちください...</p>
     `;
 
     // GASへデータ送信
     try {
         await fetch(gasUrl, {
             method: "POST",
-            mode: "no-cors", // ブラウザの制限を回避
-            headers: {
-                "Content-Type": "text/plain" // GASで最も安定して受け取れる形式
-            },
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain" },
             body: JSON.stringify(trialLogs)
         });
-        document.getElementById('send-status').innerText = "データの送信が完了しました。";
+        document.getElementById('send-status').innerText = "✅ データの送信が完了しました。";
+        document.getElementById('send-status').style.color = "#22c55e";
+        
+        // 送信完了後にRetryボタンを表示
+        if (retryBtn) retryBtn.style.display = 'inline-block';
     } catch (e) {
-        document.getElementById('send-status').innerText = "送信に失敗しました。";
+        document.getElementById('send-status').innerText = "❌ 送信に失敗しました。";
+        document.getElementById('send-status').style.color = "#ef4444";
+        if (retryBtn) retryBtn.style.display = 'inline-block';
         console.error("Transmission Error:", e);
     }
 }
