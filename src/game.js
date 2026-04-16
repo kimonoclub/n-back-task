@@ -1,17 +1,17 @@
-// 1. 設定：発行されたGASのURLをここに貼り付けてください
+// 1. 設定：発行されたGASのURL（末尾が /exec のもの）
 const gasUrl = "https://script.google.com/macros/s/AKfycbwDNmdeT7ojJIXlDn0SudBRTe-uVLdue4dKSb_-4PpqcvBXhk6ZBc0HxDk_uwYPljIzqw/exec";
 
 // 2. 変数管理
 let n = 2;
 let sequence = [];
-let trialLogs = []; // 反応ログを格納する配列
+let trialLogs = [];
 let studentID = "";
 let totalTrials = 0;
 let totalMatches = 0;
 let correctClicks = 0;
 let timeLeft = 60;
 let timerInterval;
-let startTime; // 反応時間計測用
+let startTime;
 
 // --- 画面遷移の制御 ---
 
@@ -38,7 +38,7 @@ document.getElementById('login-submit').addEventListener('mousedown', () => {
     document.getElementById('setup').style.display = 'block';
 });
 
-// レベル選択ボタンの設定
+// レベル選択ボタン
 ['btn-1', 'btn-2', 'btn-3'].forEach((id, idx) => {
     const btn = document.getElementById(id);
     const start = () => startGame(idx + 1);
@@ -76,16 +76,14 @@ function startLogic() {
 
 function nextTrial() {
     let nextPos;
-    
-    // 3回に1回(33.3%)の確率で一致させるロジック
     if (sequence.length >= n) {
         const targetPos = sequence[sequence.length - n];
         if (Math.random() < 0.333) {
-            nextPos = targetPos; // 強制一致
+            nextPos = targetPos;
         } else {
             do {
                 nextPos = Math.floor(Math.random() * 9);
-            } while (nextPos === targetPos); // 一致しないよう再抽選
+            } while (nextPos === targetPos);
         }
     } else {
         nextPos = Math.floor(Math.random() * 9);
@@ -102,11 +100,11 @@ function nextTrial() {
     const cell = document.getElementById(`cell-${nextPos}`);
     cell.classList.add('active');
     document.getElementById('matchBtn').disabled = false;
-    startTime = Date.now(); // 刺激提示開始時刻
+    startTime = Date.now();
 
     setTimeout(() => {
         cell.classList.remove('active');
-        // ボタンが押されなかった場合のログ記録
+        // ボタンが押されなかった場合もログを残す
         if (!document.getElementById('matchBtn').disabled) {
             recordTrial(false);
         }
@@ -114,13 +112,12 @@ function nextTrial() {
     }, 1000);
 }
 
-// 判定ボタンの処理
 const matchBtn = document.getElementById('matchBtn');
 const handleMatch = (e) => {
     if (e) e.preventDefault();
     if (matchBtn.disabled) return;
     
-    const rt = Date.now() - startTime; // 反応時間
+    const rt = Date.now() - startTime;
     const current = sequence[sequence.length - 1];
     const target = sequence[sequence.length - (n + 1)];
     const isMatch = (current === target);
@@ -148,7 +145,6 @@ const handleMatch = (e) => {
 matchBtn.addEventListener('mousedown', handleMatch);
 matchBtn.addEventListener('touchstart', handleMatch);
 
-// ログの記録
 function recordTrial(pressed, rt = 0) {
     const current = sequence[sequence.length - 1];
     const target = (sequence.length > n) ? sequence[sequence.length - (n + 1)] : null;
@@ -175,7 +171,6 @@ async function endGame() {
     document.getElementById('game').style.display = 'none';
     document.getElementById('result').style.display = 'block';
 
-    // 一致チャンスの総数を計算
     let actualMatches = 0;
     for(let i = n; i < sequence.length; i++) {
         if(sequence[i] === sequence[i-n]) actualMatches++;
@@ -185,22 +180,24 @@ async function endGame() {
     document.getElementById('final-stat').innerHTML = `
         ID: ${studentID}<br>
         Level: ${n}-Back<br>
-        一致正解数: ${correctClicks} / ${actualMatches}<br>
+        Score: ${correctClicks} / ${actualMatches}<br>
         <strong style="font-size: 24px; color: #38bdf8;">正答率: ${acc}%</strong><br>
         <p id="send-status" style="font-size: 12px; margin-top:10px;">データを送信中...</p>
     `;
 
     // GASへデータ送信
     try {
-        const response = await fetch(gasUrl, {
+        await fetch(gasUrl, {
             method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
+            mode: "no-cors", // ブラウザの制限を回避
+            headers: {
+                "Content-Type": "text/plain" // GASで最も安定して受け取れる形式
+            },
             body: JSON.stringify(trialLogs)
         });
         document.getElementById('send-status').innerText = "データの送信が完了しました。";
     } catch (e) {
         document.getElementById('send-status').innerText = "送信に失敗しました。";
-        console.error(e);
+        console.error("Transmission Error:", e);
     }
 }
