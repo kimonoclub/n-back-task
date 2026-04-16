@@ -1,80 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.77">
-  <style type="text/css">
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spatial N-Back Task</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;!DOCTYPE html&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;html lang="ja"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;head&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Spatial N-Back Task&lt;/title&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="css/style.css"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;/head&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;body&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="consent-screen"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;研究協力のお願い&lt;/h2&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="text-align:left; font-size:0.8rem; background:#1e293b; padding:15px; border-radius:10px; height:200px; overflow-y:scroll; margin-bottom:15px; color:#f8fafc;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;本実習では、ワーキングメモリの特性に関する教育研究のため、以下の反応データを収集します。&lt;/p&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;学籍番号&lt;/li&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;試行ごとの反応位置・正誤・反応時間&lt;/li&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;データは厳重に管理し、統計的に処理します。個人が特定される形で公表されることはありません。同意いただける場合はチェックを入れ、ログインへ進んでください。なお、同意しない場合でも成績に影響はありません。&lt;/p&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label style="color:#f8fafc;"&gt;&lt;input type="checkbox" id="consent-check"&gt; 同意します&lt;/label&gt;&lt;br&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-blue" id="consent-next" disabled style="margin-top:15px;"&gt;ログインへ進む&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="login-screen" style="display:none;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Student Login&lt;/h2&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;学籍番号を入力してください&lt;/p&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="student-id" placeholder="学籍番号" maxlength="10" style="width: 80%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #38bdf8; font-size: 1.2rem; text-align: center;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-blue" id="login-submit"&gt;次へ進む&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="setup" style="display:none;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Spatial N-Back&lt;/h2&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;レベルを選択してください&lt;/p&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-blue" id="btn-1"&gt;Level 1 (1-Back)&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-blue" id="btn-2"&gt;Level 2 (2-Back)&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-blue" id="btn-3"&gt;Level 3 (3-Back)&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="game" style="display:none;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="game-container"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="timer" style="font-size: 22px; font-weight: bold; color: #ef4444;"&gt;60s&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="status-bar" style="display: flex; justify-content: space-around; padding: 10px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; margin-bottom: 10px;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span&gt;Trials: &lt;span id="count-trials"&gt;0&lt;/span&gt;&lt;/span&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span&gt;Correct: &lt;span id="count-correct"&gt;0&lt;/span&gt;&lt;/span&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="feedback-msg" style="font-size: 1.5rem; font-weight: bold; height: 40px; margin-bottom: 10px;"&gt;READY&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="grid"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="cell" id="cell-0"&gt;&lt;/div&gt;&lt;div class="cell" id="cell-1"&gt;&lt;/div&gt;&lt;div class="cell" id="cell-2"&gt;&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="cell" id="cell-3"&gt;&lt;/div&gt;&lt;div class="cell" id="cell-4"&gt;&lt;/div&gt;&lt;div class="cell" id="cell-5"&gt;&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="cell" id="cell-6"&gt;&lt;/div&gt;&lt;div class="cell" id="cell-7"&gt;&lt;/div&gt;&lt;div class="cell" id="cell-8"&gt;&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button id="matchBtn" class="btn btn-green"&gt;MATCH!&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="result" style="display:none;"&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Result&lt;/h2&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="final-stat" style="margin-bottom: 20px;"&gt;&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-blue" onclick="location.reload()"&gt;Retry&lt;/button&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="src/game.js"&gt;&lt;/script&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;/body&gt;</span></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 14.0px 'Hiragino Kaku Gothic Pro'; -webkit-text-stroke: #000000"><span class="s1">&lt;/html&gt;</span></h2>
+
+    <div id="consent-screen">
+        <h2>研究協力のお願い</h2>
+        <div style="text-align:left; font-size:0.8rem; background:#1e293b; padding:15px; border-radius:10px; height:200px; overflow-y:scroll; margin-bottom:15px; color:#f8fafc;">
+            <p>本実習では、ワーキングメモリの特性に関する教育研究のため、以下の反応データを収集します。</p>
+            <ul>
+                <li>学籍番号</li>
+                <li>試行ごとの反応位置・正誤・反応時間</li>
+            </ul>
+            <p>データは厳重に管理し、統計的に処理します。個人が特定される形で公表されることはありません。同意いただける場合はチェックを入れ、ログインへ進んでください。なお、同意しない場合でも成績に影響はありません。</p>
+        </div>
+        <label style="color:#f8fafc;"><input type="checkbox" id="consent-check"> 同意します</label><br>
+        <button class="btn btn-blue" id="consent-next" disabled style="margin-top:15px;">ログインへ進む</button>
+    </div>
+
+    <div id="login-screen" style="display:none;">
+        <h2>Student Login</h2>
+        <p>学籍番号を入力してください</p>
+        <input type="text" id="student-id" placeholder="学籍番号" maxlength="10" style="width: 80%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #38bdf8; font-size: 1.2rem; text-align: center;">
+        <button class="btn btn-blue" id="login-submit">次へ進む</button>
+    </div>
+
+    <div id="setup" style="display:none;">
+        <h2>Spatial N-Back</h2>
+        <p>レベルを選択してください</p>
+        <button class="btn btn-blue" id="btn-1">Level 1 (1-Back)</button>
+        <button class="btn btn-blue" id="btn-2">Level 2 (2-Back)</button>
+        <button class="btn btn-blue" id="btn-3">Level 3 (3-Back)</button>
+    </div>
+
+    <div id="game" style="display:none;">
+        <div id="game-container">
+            <div id="timer" style="font-size: 22px; font-weight: bold; color: #ef4444;">60s</div>
+            <div id="status-bar" style="display: flex; justify-content: space-around; padding: 10px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; margin-bottom: 10px;">
+                <span>Trials: <span id="count-trials">0</span></span>
+                <span>Correct: <span id="count-correct">0</span></span>
+            </div>
+            <div id="feedback-msg" style="font-size: 1.5rem; font-weight: bold; height: 40px; margin-bottom: 10px;">READY</div>
+            <div class="grid">
+                <div class="cell" id="cell-0"></div><div class="cell" id="cell-1"></div><div class="cell" id="cell-2"></div>
+                <div class="cell" id="cell-3"></div><div class="cell" id="cell-4"></div><div class="cell" id="cell-5"></div>
+                <div class="cell" id="cell-6"></div><div class="cell" id="cell-7"></div><div class="cell" id="cell-8"></div>
+            </div>
+            <button id="matchBtn" class="btn btn-green">MATCH!</button>
+        </div>
+    </div>
+
+    <div id="result" style="display:none;">
+        <h2>Result</h2>
+        <div id="final-stat" style="margin-bottom: 20px;"></div>
+        <button class="btn btn-blue" onclick="location.reload()">Retry</button>
+    </div>
+
+    <script src="src/game.js"></script>
 </body>
 </html>
