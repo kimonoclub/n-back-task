@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spatial N-Back Task</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="setup">
+        <h2>Spatial N-Back</h2>
+        <p>ワーキングメモリを鍛えよう</p>
+        <button class="btn btn-blue" id="btn-1">Level 1 (1-Back)</button>
+        <button class="btn btn-blue" id="btn-2">Level 2 (2-Back)</button>
+        <button class="btn btn-blue" id="btn-3">Level 3 (3-Back)</button>
+    </div>
+
+    <div id="game" style="display:none;">
+        <div id="game-container">
+            <div id="timer">60s</div>
+            <div id="status-bar">
+                <span>Trials: <span id="count-trials">0</span></span>
+                <span>Correct: <span id="count-correct">0</span></span>
+            </div>
+            <div id="feedback-msg">READY</div>
+            <div class="grid">
+                <div class="cell" id="cell-0"></div><div class="cell" id="cell-1"></div><div class="cell" id="cell-2"></div>
+                <div class="cell" id="cell-3"></div><div class="cell" id="cell-4"></div><div class="cell" id="cell-5"></div>
+                <div class="cell" id="cell-6"></div><div class="cell" id="cell-7"></div><div class="cell" id="cell-8"></div>
+            </div>
+            <button id="matchBtn" class="btn btn-green">MATCH!</button>
+        </div>
+    </div>
+
+    <div id="result" style="display:none;">
+        <h2>Result</h2>
+        <p id="final-stat"></p>
+        <button class="btn btn-blue" onclick="location.reload()">Retry</button>
+    </div>
+
+    <script src="src/game.js"></script>
+</body>
+</html>
